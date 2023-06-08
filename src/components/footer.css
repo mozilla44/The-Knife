@@ -1,0 +1,13 @@
+footer{
+    border: 3px solid;
+    height: 3rem;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    min-width: 100vw;
+    margin: 0;
+
+}

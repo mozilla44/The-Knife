@@ -1,0 +1,19 @@
+.header {
+    border: 3px solid;
+    height: 3rem;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.favorites_link,.homepage_link{
+    text-decoration: none;
+    color: red;
+}
+.topnav{
+    border: 3px solid red;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+}
