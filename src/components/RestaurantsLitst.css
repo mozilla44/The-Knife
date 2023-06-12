@@ -1,7 +1,12 @@
 .restaurantsList_wrapper{
+    padding: 2rem;
     border: 3px solid green;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start; 
+   /*  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  grid-auto-rows: minmax(100px, auto); */
 }

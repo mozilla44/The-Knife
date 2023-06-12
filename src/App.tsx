@@ -16,9 +16,9 @@ function App() {
     <Header/>
      <Routes>
        <Route path="/" element={<Homepage />} />
-       <Route path="/restaurant/:id" element={<DetailsPage />} />
+       {/* <Route path="/restaurant/:id" element={<DetailsPage />} /> */}
 
-       <Route path="/favorites" element={<Favorites/>}/>
+       {/* <Route path="/favorites" element={<Favorites/>}/> */}
        <Route path="*" element={<NotFound />} />
      </Routes>
      <Footer/>
