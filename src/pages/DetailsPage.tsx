@@ -2,12 +2,13 @@ import { useParams } from "react-router";
 import { Restaurant } from "../models/Restaurant";
 import { useEffect, useState, useContext } from "react";
 import { RestaurantsContext } from "../context/RestaurantsContext";
+import { NotFound } from "./NotFound";
 
 export const DetailsPage = () => {
   const { id } = useParams();
   const { restaurants } = useContext(RestaurantsContext);
   const [resto, setResto] = useState<null | Restaurant>(null);
-  
+
   useEffect(() => {
     if (id != null) {
       const result = restaurants.find((r) => r.id == +id);
@@ -18,7 +19,8 @@ export const DetailsPage = () => {
    
   }, [id, restaurants]);
 
-  if (resto == null) return <h1>Loading...</h1>;
+  if (resto == null) return (<NotFound/>)
+
 
   return (
     <div>
