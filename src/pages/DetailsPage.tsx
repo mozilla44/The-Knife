@@ -1,34 +1,31 @@
 import { useParams } from "react-router";
 import { Restaurant } from "../models/Restaurant";
-import { useEffect, useState, useContext ,} from "react";
+import { useEffect, useState, useContext } from "react";
 import { RestaurantsContext } from "../context/RestaurantsContext";
-
 
 export const DetailsPage = () => {
   const { id } = useParams();
   const { restaurants } = useContext(RestaurantsContext);
   const [resto, setResto] = useState<null | Restaurant>(null);
-  /* console.log(restaurants);
-  console.log(id); */
-
+  
   useEffect(() => {
-    const stringToNumber = Number(id)
-    console.log(stringToNumber);
-    console.log(typeof(stringToNumber));
-    if(id  != null){
-    const result = restaurants.find((r) => r.id == +id);
-    console.log("resussit");
-
-    if (result) {
-      setResto(result);
+    if (id != null) {
+      const result = restaurants.find((r) => r.id == +id);
       console.log(result);
-    }
-    
-else{
-    console.log("fail")
-}
-    
-  }}, []);
+      if (result!= null) {
+      setResto(result);
+    }}
+   
+  }, [id, restaurants]);
 
-  return <div>Test</div>;
+  if (resto == null) return <h1>Loading...</h1>;
+
+  return (
+    <div>
+      <h1>{resto.name}</h1>
+      <h1>{resto.address}</h1>
+      <h1>{resto.description_long}</h1>
+      <img src={resto.img}></img>
+    </div>
+  );
 };
