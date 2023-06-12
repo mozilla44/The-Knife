@@ -7,6 +7,7 @@ import { Footer } from './components/Footer'
 import { Test } from './pages/Test'
 import { RestaurantsContext } from './context/RestaurantsContext'
 import { restaurants } from './data/data'
+import {DetailsPage} from './pages/DetailsPage'
 
 
 function App() {
@@ -16,10 +17,10 @@ function App() {
     <Header/>
      <Routes>
        <Route path="/" element={<Homepage />} />
-       {/* <Route path="/restaurant/:id" element={<DetailsPage />} /> */}
+       <Route path="/restaurant/:id" element={<DetailsPage />} />
 
        {/* <Route path="/favorites" element={<Favorites/>}/> */}
-       <Route path="*" element={<NotFound />} />
+       {/* <Route path="*" element={<NotFound />} /> */}
      </Routes>
      <Footer/>
    </BrowserRouter>
