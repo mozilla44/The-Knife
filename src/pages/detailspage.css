@@ -1,50 +1,54 @@
+.details_page {
+  border: 3px solid;
+  min-height: 100vh;
+}
+.details_img {
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+}
 .details_wrapper {
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  flex-wrap: wrap;
-}
-.details_name {
-  padding-left: 1rem;
-  margin: 0.5rem;
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: space-between;
+  margin: 2rem;
 }
 .details_intro {
   display: flex;
   justify-content: space-between;
-  padding-right: 4rem;
   align-items: center;
 }
-.details_img {
-  width: 100%;
-  max-height: 50%;
-  object-fit: cover;
+.left_pannel {
+  width: 50%;
+  padding: 1rem;
+  border-right: 2px solid ;
+  padding-left: 0;
+}
+.right_pannel {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.right_pannel {
+  display: flex;
+  flex-direction: column;
+}
+.details_menu {
+  display: flex;
+  justify-content: center;
+}
+.menu_cat_name {
+  border-bottom: 3px solid;
+  display: inline-block;
+  margin: 0 45% 0 45%;
+  justify-content: center;
+}
+.item {
+  margin-left: 1rem;
+  display: block;
+  margin-left: 45%;
+  justify-content: center;
 }
 .add_me{
     border: 3px solid;
-    height: 2rem;
-    border-radius: 5px;
-}
-.details_adress {
-  padding-left: 1rem;
-  font-size: 1rem;
-  font-weight: 100;
-  margin-top: 0;
-}
-.details_description {
-  width: 40rem;
-  padding-left: 1rem;
-  font-size: 1rem;
-  font-weight: 100;
-}
-.details_menu {
-  padding-left: 1rem;
-}
-.details_entrees,
-.details_dishes,
-.details_deserts {
-  width: 40rem;
+    min-height: 2rem;
 }
