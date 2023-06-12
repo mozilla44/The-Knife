@@ -8,10 +8,9 @@ export const Header = () => {
         <img className="logo" alt="logo" src="/src/assets/logo.png"></img>
       </Link>
       <nav className="topnav">
-      <Link to="/HomePage" className="homepage_link">Home</Link>
+      <Link to="/" className="homepage_link">Home</Link>
       <Link to="/favorites" className="favorites_link">Favorites</Link>
       {/* <Link to="/test" className="favorites_link">test</Link> */}
-
       </nav>
     </header>
   );
