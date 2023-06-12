@@ -14,6 +14,9 @@ export const Card = ({ restaurant }: CardProps) => {
         <img src={restaurant.img} className="card_img"></img>
         <h2 className="card_name">{restaurant.name}</h2>
         <h3 className="card_adress">{restaurant.address}</h3>
+        <div className="cards_btn">
+          <button>Save as favorite</button>
+        </div>
       </div>
     </Link>
   );

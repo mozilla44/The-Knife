@@ -5,6 +5,7 @@
   align-items: center;
   text-decoration: none;
   position: sticky;
+  z-index: 10;
   top: 0;
 }
 

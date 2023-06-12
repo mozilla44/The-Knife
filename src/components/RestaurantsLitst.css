@@ -1,5 +1,5 @@
 .restaurantsList_wrapper{
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 3.5rem;
     border: 3px solid green;
     display: flex;
     flex-wrap: wrap;
