@@ -51,4 +51,13 @@
 .add_me{
     border: 3px solid;
     min-height: 2rem;
+    padding: 0.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out;
+  transition-duration: 50ms;
+  
+}
+.add_me:hover{
+  transform: scale(1.1);
 }
