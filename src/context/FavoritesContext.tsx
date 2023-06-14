@@ -1,48 +1,48 @@
-import React, { createContext, useContext, useState } from "react";
-import { restaurants } from "../data/data";
-import { Restaurant } from "../models/Restaurant";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-type ContextProps = {
+type FavContextProps = {
   children: React.ReactNode;
 };
 
-type RestaurantContextType = {
-  restaurants: Restaurant[];
+type FavContextType = {
+  favRestoIds: number[];
   deleteFav: (restaurantId: number) => void;
-  addFav: (restaurantId: number) => void;
-  Test:()=> void;
+  addFavorite: (restaurantId: number) => void;
 };
 
-const RestaurantContext = createContext<RestaurantContextType>(
-  {} as RestaurantContextType
-);
+const FavContext = createContext<FavContextType>({} as FavContextType);
 
-export const useFavContext = () => useContext(RestaurantContext);
+export const useFavContext = () => useContext(FavContext);
 
-export const RestaurantContextV2Provider = ({ children }: ContextProps) => {
-  const [favResto, setFavResto] = useState(restaurants);
+export const FavContextProvider = ({ children }: FavContextProps) => {
+  const [favRestoIds, setFavRestoId] = useState<number[]>([]);
 
-  const Test = () => {
-    console.log("test")
-  }
-  const addFav = (restaurantId: number) => {
-    setFavResto(
-      favResto.map((restaurant) => {
-        if (restaurant.id === restaurantId) {
-          return { ...restaurant, isFav: true };
-        }
-        return restaurant;
-      })
-    );
+  useEffect(() => {
+    const currFavIds = localStorage.getItem("favoritesIds");
+    if (currFavIds) {
+      setFavRestoId(JSON.parse(currFavIds));
+    }
+  }, []);
+
+  const addFavorite = (restaurantId: number) => {
+    if (!favRestoIds.includes(restaurantId)) {
+      const clone = [...favRestoIds];
+      clone.push(restaurantId);
+      localStorage.setItem("favoritesIds", JSON.stringify(clone));
+      setFavRestoId(clone);
+    }
   };
 
   const deleteFav = (restaurantId: number) => {
-    setFavResto(restaurants.filter((restau) => restau.id !== restaurantId));
+    const filteredList = favRestoIds.filter((id) => id !== restaurantId) ;
+    setFavRestoId(filteredList);
+    localStorage.setItem("favoritesIds", JSON.stringify(filteredList));
+
   };
 
   return (
-    <RestaurantContext.Provider value={{ restaurants, deleteFav, addFav,Test }}>
+    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds }}>
       {children}
-    </RestaurantContext.Provider>
+    </FavContext.Provider>
   );
 };

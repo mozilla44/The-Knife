@@ -4,11 +4,14 @@ import { useEffect, useState, useContext } from "react";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { NotFound } from "./NotFound";
 import "./detailsPage.css";
+import { useFavContext } from "../context/FavoritesContext";
 
 export const DetailsPage = () => {
   const { id } = useParams();
   const { restaurants } = useContext(RestaurantsContext);
+  const {favRestoIds, deleteFav, addFavorite} = useFavContext();
   const [resto, setResto] = useState<null | Restaurant>(null);
+
 
   useEffect(() => {
     if (id != null) {
@@ -22,6 +25,8 @@ export const DetailsPage = () => {
 
   if (resto == null) return <NotFound />;
 
+  const isFav = favRestoIds.includes(resto.id);
+
   return (
    <div className="details_page">
       <img src={resto.img} className="details_img"></img>
@@ -29,7 +34,12 @@ export const DetailsPage = () => {
         <section className="left_pannel">
         <div className="details_intro">
       <h1 className="details_name">{resto.name}</h1>
-      <button className="add_me" onClick={()=>{console.log("coucou")}}>Save as favorite</button>
+      { isFav ? 
+      <button className="remove_me"  onClick={()=> deleteFav(resto.id)} >Remove from</button> 
+      : 
+      <button className="add_me" onClick={()=> addFavorite(resto.id)} >Save as favorite</button>
+      }
+      
       </div>
       <h2 className="details_adress" >{resto.address}</h2>
       <p className="details_description">{resto.description_long}</p>
@@ -39,8 +49,6 @@ export const DetailsPage = () => {
           <div className="entrees"><h3 className="menu_cat_name">Entrees:</h3>{resto.menu.entrees.map(e => <p className="item">{e}</p>)}</div>
           <div className="dishes"><h3 className="menu_cat_name">Dishes:</h3>{resto.menu.dishes.map(e => <p className="item">{e}</p>)}</div>
           <div className="desert"><h3 className="menu_cat_name">Deserts:</h3>{resto.menu.deserts.map(e => <p className="item">{e}</p>)}</div>
-
-
         </section>
       </div>
     

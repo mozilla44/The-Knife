@@ -6,5 +6,4 @@ export const NotFound = ()=>{
     <h2>No restaurant found</h2>
     </div>
     )
-
 }
