@@ -46,9 +46,9 @@ export const DetailsPage = () => {
         </section>
         <section className="right_pannel">
           <h2 className="details_menu">Menu:</h2>
-          <div className="entrees"><h3 className="menu_cat_name">Entrees:</h3>{resto.menu.entrees.map(e => <p className="item">{e}</p>)}</div>
-          <div className="dishes"><h3 className="menu_cat_name">Dishes:</h3>{resto.menu.dishes.map(e => <p className="item">{e}</p>)}</div>
-          <div className="desert"><h3 className="menu_cat_name">Deserts:</h3>{resto.menu.deserts.map(e => <p className="item">{e}</p>)}</div>
+          <div className="entrees"><h3 className="menu_cat_name">Entrees:</h3>{resto.menu.entrees.map(e => <p key={e} className="item">{e}</p>)}</div>
+          <div className="dishes"><h3 className="menu_cat_name">Dishes:</h3>{resto.menu.dishes.map(e => <p key={e}className="item">{e}</p>)}</div>
+          <div className="desert"><h3 className="menu_cat_name">Deserts:</h3>{resto.menu.deserts.map(e => <p key={e}className="item">{e}</p>)}</div>
         </section>
       </div>
     

@@ -6,7 +6,6 @@
   flex-direction: column;
   background-color: #f3eeee;
   position: relative;
-  border: 3px solid red;
 }
 .card_wrapper h2 {
   margin-top: 1rem;
