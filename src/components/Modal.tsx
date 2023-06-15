@@ -11,9 +11,9 @@ export const Modal = () => {
       }
   return (
     <div className="modal_wrapper">
-      <div className="modal-content">
+      <div className="modal-content" onClick={()=>closeModal()} >
         <i className="fa-regular fa-circle-xmark"></i>
-        <button className="close_modal">Cancel</button>
+        <button className="close_modal" onClick={()=>closeModal()}>Cancel</button>
         <button className="confirm_modal">Confirm</button>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { Modal } from "../components/Modal";
 
 type FavContextProps = {
   children: React.ReactNode;
@@ -59,9 +60,9 @@ const closeModal = () => {
 };
 
   return (
-    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds,isOpen,closeModal,openModal }}>
+    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds,isOpen,closeModal,openModal,Modal }}>
       {children}
-     {/*  {modal} */}
+      {Modal}
     </FavContext.Provider>
   );
 };
