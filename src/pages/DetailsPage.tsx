@@ -36,7 +36,7 @@ export const DetailsPage = () => {
         <div className="details_intro">
       <h1 className="details_name">{resto.name}</h1>
       { isFav ? 
-      <button className="remove_me" /* onClick={()=> deleteFav(resto.id)} */ onClick={()=>{ setCurrentId(resto.id); openModal();}} >Remove from</button> 
+      <button className="remove_me"onClick={()=>{ setCurrentId(resto.id); openModal();}} >Remove from favorites</button> 
       : 
       <button className="add_me" onClick={()=> addFavorite(resto.id)} >Save as favorite</button>
       }

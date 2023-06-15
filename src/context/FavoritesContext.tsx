@@ -24,7 +24,7 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
   const [currentId, setCurrentId] = useState<number>();
 
   //state modale 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   
 
   useEffect(() => {
@@ -47,6 +47,7 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
     const filteredList = favRestoIds.filter((id) => id !== currentId) ;
     setFavRestoId(filteredList);
     localStorage.setItem("favoritesIds", JSON.stringify(filteredList));
+    setIsOpen(false)
   };
 
 //methodes modale
