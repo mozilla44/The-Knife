@@ -20,9 +20,9 @@ export const Card = ({ restaurant }: CardProps) => {
     </Link>
     <div className="cards_btn">
       {isFav ?
-      <button className="card_btn" onClick={()=>{ setCurrentId(restaurant.id); openModal();}}>Remove from Favorites</button>
+      <button onClick={()=>{ setCurrentId(restaurant.id); openModal();}}>Remove from Favorites</button>
       :
-      <button className="card_btn" onClick={()=>addFavorite(restaurant.id)}>Save as favorite</button>
+      <button onClick={()=>addFavorite(restaurant.id)}>Save as favorite</button>
       }
     </div>
    </div>

@@ -47,15 +47,13 @@ h3 {
   width: 100%;
   justify-content: center;
   cursor: pointer;
-
 }
-.card_btn{
+.card_btn {
   border: 3px solid;
   min-height: 2rem;
   padding: 0.2rem;
-border-radius: 10px;
-cursor: pointer;
-transition: ease-in-out;
-transition-duration: 50ms;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out;
+  transition-duration: 50ms;
 }
-
