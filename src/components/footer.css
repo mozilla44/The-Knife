@@ -1,6 +1,6 @@
 html,
 body {
-  min-height: calc(100vh - 3rem);
+  min-height: calc(100vh - 36px);
 }
 
 footer {
@@ -11,16 +11,7 @@ footer {
   justify-content: center;
   text-decoration: none;
   min-width: 100vw;
-  /*  margin: 0;
-    position: sticky;
-    top: 100vh;
-    bottom: 0; */
-    position: relative;
-    left: 0;
-    bottom: 0;
+  position: relative;
+  left: 0;
+  bottom: -1rem;
 }
-/* .content-container {
-  border: 3px solid red;
-  min-height: calc(100vh - 31.4px);
-}
- */

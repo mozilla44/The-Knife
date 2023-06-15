@@ -23,7 +23,6 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
   const [favRestoIds, setFavRestoId] = useState<number[]>([]);
   const [currentId, setCurrentId] = useState<number>();
 
-  //state modale 
   const [isOpen, setIsOpen] = useState(false);
   
 
@@ -50,7 +49,6 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
     setIsOpen(false)
   };
 
-//methodes modale
 
 const openModal = () => {
   setIsOpen(true);

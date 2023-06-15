@@ -1,46 +1,43 @@
-.modal_wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    padding: 20px;
-    border: 3px solid black;
-    box-shadow: 10px 10px 5px #888888;
+.modal_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  padding: 20px;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px #888888;
 }
-
-.close_modal_cross{
-    position: absolute;
-    top: 1rem;
-    cursor: pointer;
-} 
-button{
-    cursor: pointer;
+.close_modal_cross {
+  position: absolute;
+  top: 1rem;
+  cursor: pointer;
 }
-.modal_wrapper button{
-    border: 3px solid;
-    min-height: 2rem;
-    padding: 0.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: ease-in-out;
-    transition-duration: 0s;
-    transition-duration: 50ms;
-  }
-  .modal_wrapper button:hover{
-    transform: scale(1.1);
-  } 
-
-
-.modal_btns_area{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+button {
+  cursor: pointer;
+}
+.modal_wrapper button {
+  border: 3px solid;
+  min-height: 2rem;
+  padding: 0.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out;
+  transition-duration: 0s;
+  transition-duration: 50ms;
+}
+.modal_wrapper button:hover {
+  transform: scale(1.1);
+}
+.modal_btns_area {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }

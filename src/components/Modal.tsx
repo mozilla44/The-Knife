@@ -1,8 +1,6 @@
 import "./modal.css";
 import { useFavContext } from "../context/FavoritesContext";
 
-//recuperer valeur isopen depuis contexte ?
-
 export const Modal = ({ isOpen}: {isOpen: boolean}) => {
 
     const { closeModal, deleteFav } = useFavContext();

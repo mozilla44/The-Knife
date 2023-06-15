@@ -1,4 +1,3 @@
-import React from "react";
 import { Card } from "./Card";
 import "./RestaurantsLitst.css"
 import { Restaurant } from "../models/Restaurant";

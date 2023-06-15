@@ -1,17 +1,9 @@
-.restaurantsList_wrapper{
+.restaurantsList_wrapper {
   margin-top: 1rem;
-    padding: 2rem 2rem 2rem 3.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: flex-start; 
-    
-      border: 3px solid red;
-      min-height: calc(100vh - 12rem);
-   
-    
-   /*  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  grid-auto-rows: minmax(100px, auto); */
+  padding: 2rem 2rem 2rem 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  min-height: calc(100vh - 12rem);
 }

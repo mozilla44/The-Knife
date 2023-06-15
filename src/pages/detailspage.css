@@ -19,7 +19,7 @@
 .left_pannel {
   width: 50%;
   padding: 1rem;
-  border-right: 2px solid ;
+  border-right: 2px solid;
   padding-left: 0;
 }
 .right_pannel {
@@ -48,16 +48,16 @@
   margin-left: 45%;
   justify-content: center;
 }
-.add_me,.remove_me{
-    border: 3px solid;
-    min-height: 2rem;
-    padding: 0.2rem;
+.add_me,
+.remove_me {
+  border: 3px solid;
+  min-height: 2rem;
+  padding: 0.2rem;
   border-radius: 10px;
   cursor: pointer;
   transition: ease-in-out;
   transition-duration: 50ms;
-  
 }
-.add_me:hover{
+.add_me:hover {
   transform: scale(1.1);
 }

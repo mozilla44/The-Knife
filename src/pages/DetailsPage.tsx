@@ -17,7 +17,6 @@ export const DetailsPage = () => {
   useEffect(() => {
     if (id != null) {
       const result = restaurants.find((r) => r.id == +id);
-      console.log(result);
       if (result != null) {
         setResto(result);
       }
