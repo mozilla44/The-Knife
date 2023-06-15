@@ -8,7 +8,6 @@ import { restaurants } from "./data/data";
 import { DetailsPage } from "./pages/DetailsPage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { FavContextProvider } from "./context/FavoritesContext";
-import { Modal } from "./components/Modal"
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
       <FavContextProvider>
       <BrowserRouter>
         <Header />
-        <Modal/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/restaurant/:id" element={<DetailsPage />} />

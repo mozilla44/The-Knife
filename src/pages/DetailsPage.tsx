@@ -5,6 +5,8 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
 import { NotFound } from "./NotFound";
 import "./detailsPage.css";
 import { useFavContext } from "../context/FavoritesContext";
+import { Modal } from "../components/Modal"
+
 
 export const DetailsPage = () => {
   const { id } = useParams();
@@ -29,6 +31,7 @@ export const DetailsPage = () => {
 
   return (
    <div className="details_page">
+    <Modal/>
       <img src={resto.img} className="details_img"></img>
       <div className="details_wrapper">
         <section className="left_pannel">

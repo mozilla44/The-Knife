@@ -22,7 +22,7 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
   const [favRestoIds, setFavRestoId] = useState<number[]>([]);
 
   //state modale 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   
 
   useEffect(() => {
