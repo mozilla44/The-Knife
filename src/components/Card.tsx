@@ -3,13 +3,16 @@ import "./card.css"
 import "../pages/homepage.css"
 import { useFavContext } from "../context/FavoritesContext";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 type CardProps = {
   restaurant: Restaurant;
 };
 
 export const Card = ({ restaurant }: CardProps) => {
-  const {addFavorite} = useFavContext();
+  const {addFavorite,favRestoIds, deleteFav,} = useFavContext();
+  const isFav = favRestoIds.includes(restaurant.id);
+
   return (
    <div className="card_wrapper">
     <Link to={`/restaurant/${restaurant.id}`} className="card_link">
@@ -18,7 +21,11 @@ export const Card = ({ restaurant }: CardProps) => {
     <h3 className="card_adress">{restaurant.address}</h3>
     </Link>
     <div className="cards_btn">
+      {isFav ?
+      <button onClick={()=>deleteFav(restaurant.id)}>Remove from Favorites</button>
+      :
       <button onClick={()=>addFavorite(restaurant.id)}>Save as favorite</button>
+      }
     </div>
    </div>
   );
