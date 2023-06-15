@@ -3,7 +3,6 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useContext, useEffect, useState } from "react";
 import { useFavContext } from "../context/FavoritesContext";
 import { Restaurant } from "../models/Restaurant";
-import { Modal } from "../components/Modal";
 
 export const FavoritesPage = () => {
 const {favRestoIds} = useFavContext();
@@ -16,7 +15,6 @@ useEffect(() => {
 
   return (
     <>
-    <Modal/>
        <RestaurantsList restaurants={favRestaurants} />
     </>
   );

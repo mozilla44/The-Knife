@@ -5,13 +5,12 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
 import { NotFound } from "./NotFound";
 import "./detailsPage.css";
 import { useFavContext } from "../context/FavoritesContext";
-import { Modal } from "../components/Modal"
 
 
 export const DetailsPage = () => {
   const { id } = useParams();
   const { restaurants } = useContext(RestaurantsContext);
-  const {favRestoIds, deleteFav, addFavorite} = useFavContext();
+  const {favRestoIds, addFavorite,openModal, setCurrentId} = useFavContext();
   const [resto, setResto] = useState<null | Restaurant>(null);
 
 
@@ -31,14 +30,13 @@ export const DetailsPage = () => {
 
   return (
    <div className="details_page">
-    <Modal/>
       <img src={resto.img} className="details_img"></img>
       <div className="details_wrapper">
         <section className="left_pannel">
         <div className="details_intro">
       <h1 className="details_name">{resto.name}</h1>
       { isFav ? 
-      <button className="remove_me"  onClick={()=> deleteFav(resto.id)} >Remove from</button> 
+      <button className="remove_me" /* onClick={()=> deleteFav(resto.id)} */ onClick={()=>{ setCurrentId(resto.id); openModal();}} >Remove from</button> 
       : 
       <button className="add_me" onClick={()=> addFavorite(resto.id)} >Save as favorite</button>
       }

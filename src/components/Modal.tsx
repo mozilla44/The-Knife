@@ -3,9 +3,9 @@ import { useFavContext } from "../context/FavoritesContext";
 
 //recuperer valeur isopen depuis contexte ?
 
-export const Modal = () => {
+export const Modal = ({ isOpen}: {isOpen: boolean}) => {
 
-    const { isOpen, closeModal } = useFavContext();
+    const { closeModal, deleteFav } = useFavContext();
     if (!isOpen) {
         return null;
       }
@@ -14,7 +14,7 @@ export const Modal = () => {
       <div className="modal-content" onClick={()=>closeModal()} >
         <i className="fa-regular fa-circle-xmark"></i>
         <button className="close_modal" onClick={()=>closeModal()}>Cancel</button>
-        <button className="confirm_modal">Confirm</button>
+        <button className="confirm_modal" onClick={() => deleteFav()}>Confirm</button>
       </div>
     </div>
   );

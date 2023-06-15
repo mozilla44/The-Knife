@@ -7,11 +7,11 @@ type FavContextProps = {
 
 type FavContextType = {
   favRestoIds: number[];
-  deleteFav: (restaurantId: number) => void;
+  deleteFav: () => void;
   addFavorite: (restaurantId: number) => void;
   closeModal: () => void;
   openModal: () => void;
-  isOpen: boolean;
+  setCurrentId: (id: number) => void;
 };
 
 const FavContext = createContext<FavContextType>({} as FavContextType);
@@ -21,14 +21,15 @@ export const useFavContext = () => useContext(FavContext);
 
 export const FavContextProvider = ({ children }: FavContextProps) => {
   const [favRestoIds, setFavRestoId] = useState<number[]>([]);
+  const [currentId, setCurrentId] = useState<number>();
 
   //state modale 
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   
 
   useEffect(() => {
     const currFavIds = localStorage.getItem("favoritesIds");
-    if (currFavIds) {
+    if (currFavIds != null) {
       setFavRestoId(JSON.parse(currFavIds));
     }
   }, []);
@@ -38,15 +39,14 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
       const clone = [...favRestoIds];
       clone.push(restaurantId);
       localStorage.setItem("favoritesIds", JSON.stringify(clone));
-      setFavRestoId(clone);
+      setFavRestoId(clone);      
     }
   };
 
-  const deleteFav = (restaurantId: number) => {
-    const filteredList = favRestoIds.filter((id) => id !== restaurantId) ;
+  const deleteFav = () => {
+    const filteredList = favRestoIds.filter((id) => id !== currentId) ;
     setFavRestoId(filteredList);
     localStorage.setItem("favoritesIds", JSON.stringify(filteredList));
-
   };
 
 //methodes modale
@@ -60,9 +60,9 @@ const closeModal = () => {
 };
 
   return (
-    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds,isOpen,closeModal,openModal,Modal }}>
+    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds,closeModal,openModal,setCurrentId }}>
       {children}
-      {Modal}
+      <Modal isOpen={isOpen}/>
     </FavContext.Provider>
   );
 };

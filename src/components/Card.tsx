@@ -9,7 +9,7 @@ type CardProps = {
 };
 
 export const Card = ({ restaurant }: CardProps) => {
-  const {addFavorite,favRestoIds,deleteFav} = useFavContext();
+  const {addFavorite,favRestoIds,setCurrentId, openModal} = useFavContext();
   const isFav = favRestoIds.includes(restaurant.id);
   return (
    <div className="card_wrapper">
@@ -20,7 +20,7 @@ export const Card = ({ restaurant }: CardProps) => {
     </Link>
     <div className="cards_btn">
       {isFav ?
-      <button onClick={()=>deleteFav(restaurant.id)}>Remove from Favorites</button>
+      <button onClick={()=>{ setCurrentId(restaurant.id); openModal();}}>Remove from Favorites</button>
       :
       <button onClick={()=>addFavorite(restaurant.id)}>Save as favorite</button>
       }

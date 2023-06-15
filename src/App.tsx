@@ -9,6 +9,7 @@ import { DetailsPage } from "./pages/DetailsPage";
 import { FavoritesPage } from "./pages/FavoritesPage";
 import { FavContextProvider } from "./context/FavoritesContext";
 
+
 function App() {
   return (
     <RestaurantsContext.Provider value={{ restaurants: restaurants }}>
