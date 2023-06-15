@@ -1,4 +1,7 @@
 import { Restaurant } from "../models/Restaurant";
+import "./card.css"
+import "../pages/homepage.css"
+import { useFavContext } from "../context/FavoritesContext";
 import { Link } from "react-router-dom";
 
 type CardProps = {
@@ -6,14 +9,24 @@ type CardProps = {
 };
 
 export const Card = ({ restaurant }: CardProps) => {
+  const {addFavorite,favRestoIds,setCurrentId, openModal} = useFavContext();
+  const isFav = favRestoIds.includes(restaurant.id);
   return (
-    <Link to={`/restaurant/${restaurant.id}`}>
-      <div className="card_wrapper">
-        <img src={restaurant.img}></img>
-        <h2 className="card_name">{restaurant.name}</h2>
-        <h3 className="card_adress">{restaurant.address}</h3>
-        <p className="card_description">{restaurant.description_short}</p>
-      </div>
+   <div className="card_wrapper">
+    <Link to={`/restaurant/${restaurant.id}`} className="card_link">
+    <img src={restaurant.img} className="card_img"></img>
+    <h2 className="card_name">{restaurant.name}</h2>
+    <h3 className="card_adress">{restaurant.address}</h3>
     </Link>
+    <div className="cards_btn">
+      {isFav ?
+      <button onClick={()=>{ setCurrentId(restaurant.id); openModal();}}>Remove from Favorites</button>
+      :
+      <button onClick={()=>addFavorite(restaurant.id)}>Save as favorite</button>
+      }
+    </div>
+   </div>
   );
 };
+
+

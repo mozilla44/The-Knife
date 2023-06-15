@@ -1,0 +1,8 @@
+.modal_wrapper{
+    border: 3px solid red;
+    height: 20rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

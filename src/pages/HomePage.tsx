@@ -1,11 +1,11 @@
-import { RestaurantsList } from "../components/RestaurantsList"
-import { RestaurantsContext } from "../context/RestaurantsContext"
-import {restaurants} from "../data/data"
+import { RestaurantsList } from "../components/RestaurantsList";
+import { RestaurantsContext } from "../context/RestaurantsContext";
+import { restaurants } from "../data/data";
+import { useContext } from "react";
 
-export const Homepage = ()=> {
-   
-    return(
-        <RestaurantsContext.Provider value={{ restaurants: restaurants }}>
-        <RestaurantsList />
-      </RestaurantsContext.Provider>)
-}
+export const Homepage = () => {
+  const {restaurants} = useContext(RestaurantsContext);
+  return (
+      <RestaurantsList restaurants={restaurants} />
+  );
+};

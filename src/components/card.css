@@ -1,0 +1,49 @@
+.card_wrapper {
+  height: 20rem;
+  max-width: 19rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f3eeee;
+  position: relative;
+}
+.card_wrapper h2 {
+  margin-top: 1rem;
+}
+.card_wrapper,
+h3 {
+  margin: 0;
+}
+.card_img {
+  min-width: 100%;
+  height: 50%;
+  border-radius: 15px 15px 0 0;
+}
+.card_link {
+  text-decoration: none;
+  min-height: 20rem;
+  min-width: 19rem;
+}
+.card_name {
+  margin: 0;
+  color: black;
+  margin-left: 0.5rem;
+}
+.card_adress {
+  color: black;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 100;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.cards_btn {
+  position: absolute;
+  bottom: 0.5rem;
+  right: rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
