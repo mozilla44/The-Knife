@@ -1,3 +1,7 @@
+html, body { 
+    min-height: calc(100vh - 3rem);
+}
+
 footer{
     height: 3rem;
     background-color: rgb(151, 151, 151);
@@ -5,8 +9,14 @@ footer{
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    bottom: 0;
     min-width: 100vw;
-    margin: 0;
-    /* position: fixed; */
+   /*  margin: 0;
+    position: sticky;
+    top: 100vh;
+    bottom: 0; */
+    position: relative;
+    left: 0;
+    bottom: 0;
 }
+
+ 

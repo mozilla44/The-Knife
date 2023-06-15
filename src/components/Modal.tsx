@@ -11,10 +11,13 @@ export const Modal = ({ isOpen}: {isOpen: boolean}) => {
       }
   return (
     <div className="modal_wrapper">
-      <div className="modal-content" onClick={()=>closeModal()} >
-        <i className="fa-regular fa-circle-xmark"></i>
+      <div className="modal-content">
+        <h3>Do you really wish to delete this favorite?</h3>
+        <div className="modal_btns_area">
         <button className="close_modal" onClick={()=>closeModal()}>Cancel</button>
         <button className="confirm_modal" onClick={() => deleteFav()}>Confirm</button>
+        </div>
+        <i className="fa-regular fa-circle-xmark close_modal_cross fa-lg" onClick={()=>closeModal()}></i>
       </div>
     </div>
   );
