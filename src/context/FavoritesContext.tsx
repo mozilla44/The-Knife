@@ -8,14 +8,22 @@ type FavContextType = {
   favRestoIds: number[];
   deleteFav: (restaurantId: number) => void;
   addFavorite: (restaurantId: number) => void;
+  closeModal: () => void;
+  openModal: () => void;
+  isOpen: boolean;
 };
 
 const FavContext = createContext<FavContextType>({} as FavContextType);
+
 
 export const useFavContext = () => useContext(FavContext);
 
 export const FavContextProvider = ({ children }: FavContextProps) => {
   const [favRestoIds, setFavRestoId] = useState<number[]>([]);
+
+  //state modale 
+  const [isOpen, setIsOpen] = useState(false)
+  
 
   useEffect(() => {
     const currFavIds = localStorage.getItem("favoritesIds");
@@ -40,9 +48,20 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
 
   };
 
+//methodes modale
+
+const openModal = () => {
+  setIsOpen(true);
+};
+
+const closeModal = () => {
+  setIsOpen(false);
+};
+
   return (
-    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds }}>
+    <FavContext.Provider value={{ addFavorite, deleteFav, favRestoIds,isOpen,closeModal,openModal }}>
       {children}
+     {/*  {modal} */}
     </FavContext.Provider>
   );
 };
