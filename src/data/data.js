@@ -91,7 +91,7 @@ export const restaurants = [
     description_short: "Cuisine japonaise, cadre à l'ambiance détendue",
     description_long:
       "Restaurant japonais de style décontracté servant ramens, plats sautés et donburis, accompagnés de bière et de saké.",
-    img: "https://media-cdn.tripadvisor.com/media/photo-s/10/b0/a3/93/gyoza.jpg",
+    img: "https://p9.storage.canalblog.com/90/14/692391/52280164.jpg",
     menu: {
       entrees: ["entree 1", "entree 2"],
       dishes: ["plat 1", "plat 2", "plat 3"],
