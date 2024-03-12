@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/restaurant/:id" element={<DetailsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
+          {/* Nice fallback */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

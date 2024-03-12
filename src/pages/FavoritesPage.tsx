@@ -14,6 +14,7 @@ useEffect(() => {
 }, [favRestoIds,restaurants])
 
   return (
+    // You don't need the fragment here
     <>
        <RestaurantsList restaurants={favRestaurants} />
     </>

@@ -49,7 +49,7 @@ export const FavContextProvider = ({ children }: FavContextProps) => {
     setIsOpen(false)
   };
 
-
+// Tu peux passer directement le setIsOpen sans méthode intermédiaires
 const openModal = () => {
   setIsOpen(true);
 };
